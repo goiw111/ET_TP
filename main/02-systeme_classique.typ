@@ -134,13 +134,15 @@ Les relais et les contacteurs sont des composants fondamentaux dans l'automatisa
   image("/resources/img/Con_Relay.jpg",width: 80%),
   caption: ""
 )
+
+// https://control.com/technical-articles/contactors-versus-relays-differences-and-applications/
 === Principes de fonctionnement des relais et des contacteurs
 
 Les relais et les contacteurs fonctionnent tous deux en utilisant une bobine électromagnétique. Lorsqu'un courant passe dans la bobine, un champ magnétique est généré, ce qui déplace un fer-blanc (armature) qui ouvre ou ferme un jeu de contacts, permettant ou interrompant ainsi le passage du courant dans un circuit. En termes simples, ils agissent comme des interrupteurs qui permettent à un circuit de commande basse puissance de contrôler des appareils haute puissance tels que des moteurs, des lumières ou d'autres machines.
 
 Le fonctionnement est similaire : lorsqu'un petit courant passe à travers la bobine, il génère un champ magnétique qui attire ou repousse l'armature, provoquant l'ouverture ou la fermeture des contacts. Cette modification de l'état des contacts permet de contrôler le fonctionnement d'un courant beaucoup plus important dans le circuit principal.
 
-=== Différences entre relais et contacteurs
+- *Différences entre relais et contacteurs*
 
 Bien qu'ils partagent un principe de fonctionnement similaire, les *relais* et les *contacteurs* sont conçus pour des objectifs et des environnements différents.
 #figure(
@@ -191,7 +193,7 @@ Bien que les relais et les contacteurs soient des dispositifs électromécanique
 
 \
 \
-
+// Explore the Types of Electrical Relays : Ibrahim Salman
 === Explorer les types de relais électriques
 
 Dans cette section, nous allons vous présenter les différents types de relais et leurs utilisations spécifiques. Voyons ce qu'il en est.
@@ -270,6 +272,109 @@ Dans cette section, nous allons vous présenter les différents types de relais 
   - Pourquoi c'est important : Empêche les moteurs de fonctionner en sens inverse et assure le bon fonctionnement de l'équipement.
 
 #figure(
-  image("/resources/img/412412-LEGRAND-1000.jpg",width: 50%),
-  caption: "Relais à verrouillage"
+  image("/resources/img/DPA51CM44-4-300x300.jpg",width: 47%),
+  caption: "Relais de séquence de phase"
 )
+
+- *Relais temporisé*
+  - Qu'est-ce que c'est ? Introduit une temporisation entre l'activation et la commutation des contacts.
+  - Domaines d'application : Systèmes d'automatisation, bandes transporteuses et séquences de démarrage des moteurs.
+  - Pourquoi c'est important ? Essentiel pour les opérations qui nécessitent une synchronisation précise, garantissant que les machines démarrent ou s'arrêtent avec des délais contrôlés.
+
+#figure(
+  image("/resources/img/0023300_time-delay-relay-delay-off-without-supply-power-acdc-12-240v_550.jpeg",width: 47%),
+  caption: "Relais temporisé"
+)
+
+- *Relais à distance*
+ - Qu'est-ce que c'est ? Il mesure l'impédance d'une ligne de transmission pour détecter les défauts à différentes distances de l'emplacement du relais.
+ - Domaines d'application : Protection des lignes de transmission dans les réseaux de distribution d'électricité.
+ - Pourquoi c'est important ? Assure la protection des lignes électriques à longue distance en détectant rapidement les défauts. en détectant rapidement les défauts.
+
+#figure(
+  image("/resources/img/siemens-siprotec.jpg",width: 48%),
+  caption: "Relais à distance"
+)
+
+- *Relais de fréquence*
+  - Qu'est-ce que c'est ? Il surveille la fréquence d'un système électrique et s'active si elle sort de la plage autorisée.
+  - Domaines d'application : Protection des réseaux électriques, systèmes d'énergie renouvelable.
+  - Pourquoi c'est important : Maintient la stabilité du système en assurant une fréquence constante, ce qui est crucial pour les opérations du réseau électrique.
+
+#figure(
+  image("/resources/img/PF153415A_369.jpg",width: 50%),
+  caption: "Relais de fréquence"
+)
+
+- *Relais de tension*
+  - Qu'est-ce que c'est ? S'active lorsque la tension atteint un niveau prédéfini, protégeant ainsi les circuits des conditions de sous-tension ou de surtension.
+  - Domaines d'application : Systèmes de distribution d'énergie et de réseau pour stabiliser la tension. 
+  - Pourquoi c'est important : Assure la protection des équipements sensibles en maintenant la tension dans des limites sûres.
+
+#figure(
+  image("/resources/img/115853.png",width: 46%),
+  caption: "Relais de tension"
+)
+
+- *Relais de courant*
+  - Qu'est-ce que c'est ? Détecte et réagit lorsque le courant dans un circuit dépasse un seuil prédéfini.
+  - Domaines d'application : Protection des moteurs, protection contre les surcharges et gestion des systèmes d'alimentation.
+  - Pourquoi c'est important ? Protège les moteurs et autres équipements électriques contre les surintensités, prolongeant ainsi leur durée de vie.
+
+#figure( 
+  image("/resources/img/current-monitoring-relay-over-under-current.png",width: 46%),
+  caption: "Relais de courant"
+)
+
+=== Interposition des relais dans les automates
+
+#infobox()[Les relais présentent un avantage certain par rapport à de nombreux dispositifs à semi-conducteurs en ce qu'ils assurent l'isolation entre les circuits. Des tensions et des courants différents peuvent être « interposés » pour assurer la sécurité, l'efficacité et la compatibilité entre les systèmes.]
+
+Outre l'exécution directe de fonctions logiques, les relais électromécaniques peuvent également être utilisés comme dispositifs d'interposition entre des capteurs, des contrôleurs et/ou des dispositifs de contrôle mal adaptés. Un exemple très simple d'utilisation d'un relais pour intercaler des dispositifs mal adaptés est illustré dans le schéma de circuit suivant, où un délicat interrupteur à bascule est utilisé pour commander une batterie de feux à haute puissance pour un véhicule tout-terrain :
+
+#figure( 
+  image("/resources/img/image1_28_3.jpg",width: 90%),
+  caption: "Relais de courant"
+)
+
+Dans ce circuit, le relais ne remplit aucune fonction logique. Il se contente d'« amplifier » le signal envoyé par l'interrupteur à bascule du tableau de bord pour envoyer ou interrompre l'alimentation de la batterie de lampes à haute puissance. Sans le relais, il faudrait installer un interrupteur à bascule beaucoup plus robuste sur le tableau de bord de ce véhicule pour activer et désactiver le circuit d'éclairage de manière sûre et fiable.
+
+- *Relais d'interposition pour la sécurité*
+Un autre exemple de relais d'interposition que l'on trouve dans les applications automobiles est l'utilisation d'un « solénoïde » dans le circuit du moteur de démarrage électrique d'un moteur à combustion interne. Le commutateur de commande de « démarrage » est généralement actionné par le conducteur qui tourne une clé, ce commutateur étant monté sur la colonne de direction ou le tableau de bord du véhicule. Le moteur de démarrage, quant à lui, consomme généralement des centaines d'ampères de courant lorsqu'il s'efforce de démarrer le moteur. Un interrupteur à clé capable d'établir et de couper des centaines d'ampères de courant serait énorme et assez dangereux à placer dans la cabine du véhicule. Le relais « solénoïde » connecté entre le commutateur à clé et le moteur de démarrage élimine ce danger et permet à un commutateur à clé relativement délicat d'activer en toute sécurité le moteur à haute puissance.
+
+Il convient de noter que, bien que les relais de contrôle puissent être interposés pour des raisons de sécurité, cela n'est pas synonyme de la catégorie de dispositifs appelés « relais de sécurité », avec des ensembles redondants de bobines d'entrée et d'ensembles de contacts qui répondent à des réglementations de sécurité strictes, normalement pour des applications de moteur et de mouvement.
+
+- *Relais de conversion de tension alternative en tension continue*
+Voici un exemple industriel de relais d'interposition entre des dispositifs mal adaptés : un détecteur de proximité à sortie AC doit déclencher un canal d'entrée vers un automate programmable (PLC) conçu pour 24 volts DC seulement :
+
+#figure( 
+  image("/resources/img/image2_28_3.jpg",width: 80%),
+  caption: "Relais de courant"
+)
+
+Là encore, le relais de ce système ne remplit aucune fonction logique, mais permet simplement au détecteur de proximité de piloter l'un des canaux d'entrée de l'automate. Connecter directement le détecteur de proximité à l'un des canaux d'entrée de l'automate n'est pas une option pratique (ou sûre) car cette entrée particulière de l'automate nécessite 24 volts CC pour être activée, et notre détecteur de proximité fonctionne sur 120 volts CA, ce qui risquerait d'endommager ou de détruire l'entrée de l'automate. Le décalage entre la tension du commutateur et la tension d'entrée de l'automate nous oblige à utiliser le relais pour « s'interposer » entre le commutateur et l'automate. Lorsque le détecteur de proximité détecte un objet à proximité, sa sortie s'active, ce qui alimente la bobine du relais. Lorsque le contact du relais se ferme magnétiquement, il complète un circuit de 24 volts CC pour atteindre le canal d'entrée 0 de l'automate, ce qui le met sous tension.
+
+- *Amplification du courant avec des relais*
+Les relais d'interposition sont également utilisés pour connecter des sorties d'API et des dispositifs de commande non compatibles. Dans cette application, l'inadéquation peut concerner les tensions nominales et/ou les courants nominaux. Comme pour le circuit d'interposition d'entrée présenté précédemment, la tâche du relais dans un circuit d'interposition de sortie est d'être contrôlé par le canal de sortie de l'API et, à son tour, de diriger l'alimentation vers un dispositif de terrain qui est lui-même incompatible avec la sortie de l'API.
+
+Le schéma suivant montre un exemple de relais d'interposition connecté à un canal de sortie d'API pour « amplifier » la sortie de courant :
+
+#figure( 
+  image("/resources/img/image3_28_3.jpg",width: 80%),
+  caption: "Relais de courant"
+)
+
+Dans ce circuit, les sorties à transistor discret de l'automate ne peuvent gérer qu'une petite quantité de courant continu. La bobine du contacteur triphasé nécessite des niveaux de courant modestes pour fonctionner, et le relais s'interpose donc entre le canal de sortie à faible courant de l'API et les demandes de courant relativement plus élevées de la bobine du contacteur. De nombreux dispositifs de charge consommeraient beaucoup plus de courant, et la capacité d'amplifier le courant est une application clé des dispositifs à relais.
+
+- *Diode de commutation (diode Flyback)*
+Un détail important de ce circuit de relais est l'inclusion d'une diode de commutation, ou diode flyback, en parallèle avec la bobine du relais, dans le but de dissiper l'énergie stockée dans la bobine au moment de la désexcitation lorsque le détecteur de proximité s'éteint. Sans cette diode, la tension de retour de la bobine (qui peut atteindre des centaines de volts) détruira le transistor de sortie du détecteur de proximité.
+
+Notez que cette diode de commutation semble être connectée « à l'envers » par rapport à la polarité de la source de courant continu de 24 volts : la cathode est orientée vers le pôle positif de la source et l'anode vers le pôle négatif de la source. C'est intentionnel, car nous ne souhaitons pas que la diode fonctionne lorsque le courant est appliqué à la bobine du relais par l'intermédiaire du détecteur de proximité. La diode ne s'allume que lorsque la polarité s'inverse, ce qui se produit lorsque l'interrupteur de proximité s'éteint et que le champ magnétique de la bobine de relais s'effondre (agissant désormais comme une source et non plus comme une charge). Comme la bobine du relais émet temporairement une tension « inverse », la diode fournit à cette bobine un chemin continu pour son courant tout en laissant tomber une faible tension (environ 0,7 volt DC), dissipant l'énergie stockée de la bobine sous forme de chaleur au niveau de la diode.
+
+== conclusion
+
+Les systèmes à relais ont joué un rôle essentiel dans l'automatisation industrielle avant l'arrivée des contrôleurs logiques programmables (PLC). Leur principal avantage réside dans leur simplicité et leur fiabilité pour des applications de contrôle basiques. Les relais sont des composants électromécaniques faciles à comprendre et à utiliser, ce qui les rend accessibles même pour les techniciens débutants. Ils sont également peu coûteux à l'achat, ce qui en fait une option économique pour des systèmes de contrôle simples. De plus, les relais sont robustes et peuvent fonctionner dans des environnements difficiles, comme des températures élevées ou des conditions de vibration, tout en étant moins sensibles aux interférences électromagnétiques que certains systèmes électroniques modernes. Ces caractéristiques en font une solution fiable pour des applications à petite échelle ou peu complexes.
+
+Cependant, les systèmes à relais présentent des limites significatives, notamment lorsqu'ils sont utilisés pour des applications à grande échelle ou complexes. Leur principal inconvénient est la complexité du câblage et de la maintenance. Plus le nombre de relais augmente, plus le système devient difficile à gérer, avec des schémas de câblage souvent enchevêtrés et difficiles à dépanner. De plus, les relais sont des dispositifs mécaniques sujets à l'usure, ce qui nécessite une maintenance fréquente pour éviter les pannes. Une autre limitation majeure est leur manque de flexibilité : toute modification de la logique de contrôle ou ajout de nouvelles fonctions nécessite un récâblage physique, ce qui est à la fois coûteux et chronophage. Ces contraintes rendent les systèmes à relais peu adaptés aux environnements industriels modernes, où la flexibilité et l'évolutivité sont essentielles.
+
+En conclusion, les systèmes à relais ont été une solution fiable et économique pour l'automatisation industrielle pendant des décennies, en particulier pour des applications simples et à petite échelle. Cependant, leur complexité croissante dans les systèmes plus grands, leur manque de flexibilité et leurs besoins de maintenance fréquente en limitent l'utilité dans les environnements industriels modernes. Avec l'avènement des PLC et d'autres technologies avancées, les systèmes à relais ont été largement remplacés, bien qu'ils restent pertinents dans certains contextes spécifiques où la simplicité et le faible coût sont prioritaires.
