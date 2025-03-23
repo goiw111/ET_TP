@@ -63,6 +63,57 @@ Il existe d’autres modes de fonctionnement, moins courants :
 
 - synchrone par rapport aux entrées seulement ;
 - asynchrone.
+== Différence entre un automate compact et un automate modulaire.
+=== PLC compact.
+Les automates compacts sont des contrôleurs logiques programmables conçus pour les applications d'automatisation industrielle de petite taille, avec des besoins d'entrées/sorties limités. Leur taille compacte et leur conception simple en font la solution idéale pour les applications où l'espace est limité. Voici quelques avantages des automates compacts :
+- La petite taille des automates compacts permet de gagner beaucoup de place dans les armoires de commande et les rend adaptés aux installations avec un espace limité.
+- Ces automates programmables sont moins chers que leurs homologues plus performants. Leur rentabilité en fait une solution économique pour les projets nécessitant peu d'automatisation.
+- Les automates compacts sont conviviaux et faciles à connecter aux systèmes actuels. Cette facilité de connectivité permet une transition en douceur vers des opérations automatisées avec peu de modifications.
+*Exemples :*
+- Siemens S7-1200.
+- Allen-Bradley MicroLogix
+- Schneider Modicon M221
+#figure(
+  image("../resources/img/Schneider Modicon M221.jpg",width:40%),
+  caption: "Schneider Modicon M221"
+)
+=== PLC modulaire.
+Les API modulaires sont conçus pour offrir une flexibilité aux applications d'automatisation industrielle. Ils permettent aux utilisateurs d'ajouter ou de supprimer facilement des modules d'entrée/sortie. Grâce à leur polyvalence, ils sont parfaitement adaptés aux applications dont les besoins d'automatisation évoluent. Voici quelques avantages des API modulaires :
+- Il fournit une solution évolutive qui peut s’adapter à l’évolution des besoins d’automatisation.
+- Il simplifie le dépannage et la maintenance, car les modules défectueux peuvent être remplacés sans affecter l'ensemble du système.
+- Il garantit que le système d’automatisation peut évoluer pour répondre aux futures exigences technologiques ou opérationnelles.
+- Les API modulaires sont également appelés API montés en rack. Le matériel de base commence par un matériel de montage en rack avec alimentation + unité CPU avec un nombre différent d'emplacements [3, 5, 10] disponibles sur le panneau arrière du rack pour l'extension de la sélection de divers modules API en fonction des besoins de l'application.
+- Les règles de conception matérielle de base stipulent de fournir une capacité d'emplacements de réserve de 25 % pour une extension future, à la fois en termes de disponibilité du nombre d'emplacements et de disponibilité des points d'E/S sur les modules de chaque emplacement.
+- La programmation devient complexe avec l'API modulaire et nécessite la maintenance d'un fichier de configuration matérielle réel pour chaque application qui comprend le processeur et les numéros de modèle de spécifications pour chaque module sur le rack arrière du processeur.
+- Les temps de balayage des E/S de l'API augmentent à chaque ajout de modules d'E/S. L'optimisation du temps de balayage est donc un critère de conception important.
+- La sélection de l'alimentation est essentielle et la distribution de l'alimentation s'effectue via un bus commun sur le panneau arrière vers les modules d'E/S installés sur chaque module de rack.
+*Exemples :*
+- iemens S7-1200/1500
+- Allen-Bradley ControlLogix
+- Schneider Electric Modicon
+#figure(
+  image("../resources/img/PLC Module ModelAS16AP11R-A.jpg",width:50%),
+  caption: "PLC Module ModelAS16AP11R-A."
+)
+== Le langage ladder.
+Le langage ladder ou langage à contacts ou encore schéma à relais fait partie des 5 langages standards de la norme CEI 61131-3 définit par la commission électrotechnique internationale(CEI).Le langage ladder est un langage de programmation graphique facile à comprendre et à prendre en main.C'est sans doute le langage de programmation d'automatisme le plus couramment utilisé pour la programmation d'automates.Le langage ladder est composé d'une séquence de contacts (interrupteurs qui sont soit fermés,soit ouverts) et de bobines qui permettent de traduire les états logiques d'un système.
+
+Dans l'image ci-dessus,un appuie sur "contact" laisse passer le courant sur la ligne ce qui permet d'exciter la bobine.Il existe plusieurs types de contatcts:
+#figure(
+  image("../resources/img/programmation-ladder.jpg",width:50%),
+  caption: "programmation-ladder."
+)
+
+
+
+ 
+
+
+
+
+
+
+
 == Réseaux d'automates
 === Principe:
 Avec le développement des systèmes automatisés et de l'électronique, la recherche de la baisse des coûts et la nécessité actuelle de pouvoir gérer au mieux la production et a partir du moment où tous les équipements sont de type informatique, il devient intéressant de les interconnecter à un mini-ordinateur ou à un automate de supervision .
