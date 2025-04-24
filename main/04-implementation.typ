@@ -4,4 +4,5 @@
 
 = implémentation
 
-
+#include "/main/04-1-project_1.typ"
+#include "/main/04-2-project_2.typ"
