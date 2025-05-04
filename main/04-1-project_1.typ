@@ -140,27 +140,23 @@ La *transformation de Clarke-Park* est une transformation mathématique utilisé
 
 - *4.4.1 Transformation de Clarke (Transformation αβ)*
 
-Cette étape transforme les courants statoriques triphasés (\( i_a \), \( i_b \), \( i_c \)) en courants diphasés (\( i_\alpha \), \( i_\beta \)) dans un système de référence stationnaire. Les équations de cette transformation sont :
+Cette étape transforme les courants statoriques triphasés ($i_a$, $i_b$,$i_c$) en courants diphasés ($i_alpha $, $i_beta$) dans un système de référence stationnaire. Les équations de cette transformation sont :
 
-\[
-\begin{aligned}
-i_\alpha &= \frac{2}{3} i_a - \frac{1}{3} i_b - \frac{1}{3} i_c \\
-i_\beta &= \frac{1}{\sqrt{3}} i_b - \frac{1}{\sqrt{3}} i_c
-\end{aligned}
-\]
+$
+i_alpha &= frac(2,3) i_a - frac(1,3) i_b - frac(1,3) i_c \
+i_beta &= frac(1,sqrt(3)) i_b - frac(1,sqrt(3)) i_c
+$
 
 - * 4.4.2 Transformation de Park (Transformation dq) *
 
-Cette étape transforme ensuite les courants diphasés (\( i_\alpha \), \( i_\beta \)) du système de référence stationnaire vers un système de référence tournant aligné avec le flux rotorique. Ce système de référence tournant est appelé le *système d-q*. Les équations de cette transformation sont :
+Cette étape transforme ensuite les courants diphasés ($i_alpha$, $i_beta$) du système de référence stationnaire vers un système de référence tournant aligné avec le flux rotorique. Ce système de référence tournant est appelé le *système d-q*. Les équations de cette transformation sont :
 
-\[
-\begin{aligned}
-i_d &= i_\alpha \cos(\theta) + i_\beta \sin(\theta) \\
-i_q &= -i_\alpha \sin(\theta) + i_\beta \cos(\theta)
-\end{aligned}
-\]
+$
+i_d &= i_alpha cos(theta) + i_beta sin(theta) \
+i_q &= -i_alpha sin(theta) + i_beta cos(theta)
+$
 
-où \( \theta \) est l'angle entre le système de référence stationnaire et le système de référence tournant.
+où $theta$ est l'angle entre le système de référence stationnaire et le système de référence tournant.
 
 La *transformation de Clarke-Park* est cruciale car elle facilite la décomposition selon les axes d-q, convertissant les quantités alternatives variables dans le temps en quantités continues dans le système de référence tournant. Cela simplifie la conception du système de contrôle, ce qui facilite la mise en œuvre de stratégies de contrôle.
 
@@ -180,7 +176,7 @@ La *transformation de Clarke-Park* est cruciale car elle facilite la décomposit
   - *Réactance de fuite du stator ($L_"ls" $)* : Correspond aux pertes de flux qui ne couplent pas efficacement avec le rotor.
   - *Inductance mutuelle ($L_m $)* : Représente le couplage magnétique entre le stator et le rotor.
   - *Résistance du rotor ($R_r $)* : Représente la résistance des bobinages ou barres du rotor.
-  - *Réactance de fuite du rotor ($L_{lr} $)* : Correspond aux pertes de flux dues au rotor.
+  - *Réactance de fuite du rotor ($L_"lr"$)* : Correspond aux pertes de flux dues au rotor.
   - *Vitesse synchrone ($omega_s $)* : Vitesse théorique de rotation du champ statorique.
   - *Fréquence de glissement ($omega_s - omega_r$)* : Différence entre la vitesse synchrone et la vitesse réelle du rotor.
 
