@@ -1,9 +1,7 @@
-== Projet 1 : Commande en boucle ouverte d’un système de pompage d’eau avec composants classiques
+== Projet 1 : Commande en boucle fermée d’un système de pompage d’eau avec un PLC
 
-
-Ce projet vise à mettre en œuvre un système de commande en boucle ouverte  pour gérer une pompe à eau , reposant uniquement sur des composants de commande classiques tels qu'un contacteur  et des boutons poussoirs  (Start/Stop). Ce système ne comporte aucune rétroaction, ce qui en fait un excellent exemple pour comprendre les bases des systèmes de commande industriels. 
-
-Pour bien comprendre le fonctionnement global du système de pompage d’eau en boucle ouverte, il est essentiel de distinguer et d'expliquer en détail les deux circuits principaux : le circuit de puissance  et le circuit de commande . Chacun a un rôle spécifique et complémentaire dans le fonctionnement du système. 
+Cette section pose les bases de la compréhension du contrôle en boucle fermée d'un système de pompage d'eau mis en œuvre avec un automate programmable (PLC). Elle détaille les composants matériels essentiels, notamment la distribution électrique, le moteur et son entraînement à fréquence variable (VFD), ainsi que l'automate "SIEMENS LOGO !"  qui sert de cœur de commande. 
+En outre, cette section examine méticuleusement les configurations d'entrée et de sortie de l'automate, ainsi que les circuits de relais. Surtout, il déchiffre le diagramme logique intégré, fournissant une compréhension fondamentale de la stratégie de contrôle régissant le système de pompage automatisé.
 
 - *1.1 Circuit de Puissance*
 
@@ -258,7 +256,7 @@ où :
 
 - *Implémentation dans Simulink : Simulation de la Machine à Induction*
 
-La simulation de la machine à induction dans Simulink est réalisée en utilisant un modèle dynamique basé sur les équations d'état et les transformations de Clarke-Park. Le schéma ci-dessous illustre l'implémentation du modèle dans Simulink, avec une structure modulaire qui permet de représenter les interactions entre le stator, le rotor et le système mécanique.
+  La simulation de la machine à induction dans Simulink est réalisée en utilisant un modèle dynamique basé sur les équations d'état et les transformations de Clarke-Park. Le schéma ci-dessous illustre l'implémentation du modèle dans Simulink, avec une structure modulaire qui permet de représenter les interactions entre le stator, le rotor et le système mécanique.
 
 #figure(
   image("../resources/img/matlab_sys.png"),
@@ -318,7 +316,6 @@ Le modèle Simulink est divisé en plusieurs sections principales :
     image("../resources/img/is_d.png")
   )
 
-#pagebreak()
 
   $ i_"r  dq" = frac(Phi_"r dq" - L_m i_"s dq",L_m + L_lr) $
   
@@ -337,7 +334,6 @@ Le modèle Simulink est divisé en plusieurs sections principales :
 - *2.6 Système Mécanique*
 - *Mechanical System* : Ce bloc simule le comportement mécanique du rotor, en tenant compte de l'inertie ($J$), de la friction ($D$) et du couple de charge ($T_L$). La vitesse du rotor ($omega_r$) est calculée en résolvant l'équation :
 
-#pagebreak()
 
   $ frac(d omega_r, "dt") = frac(T_e - D omega_r - T_L,J) $
   #figure(
