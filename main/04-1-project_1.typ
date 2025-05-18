@@ -87,6 +87,11 @@ Pour analyser et valider le fonctionnement du système, plusieurs outils ont ét
   - Facilite la création et la validation du circuit de puissance et de commande.
 
 - *4.2 PC_Simu*
+
+  #figure(
+    image("../resources/img/pc1.PNG",width: 80%)
+  )
+
   - Fournit une interface homme-machine (IHM) avec des boutons virtuels pour tester le système.
   - Simule l'interaction humaine avec le système, permettant de vérifier la logique de fonctionnement.
 
