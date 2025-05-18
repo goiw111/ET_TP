@@ -34,6 +34,7 @@ Commandé par une sortie digitale du PLC (DO1).
 - KM2 :
 Inverse le sens de rotation du moteur (si nécessaire).
 Commandé par une sortie digitale du PLC (DO2).
+
 *PLC (Automate Programmable)*
 - *Rôle :* Cerveau du système. Exécute un programme pour :
 
@@ -147,3 +148,9 @@ La simulation du système  pompe  hydraulique comprend plusieurs composants clé
   image("../resources/img/pcsimu.PNG",width:60%),
  
 )
+== Conclusion.
+Ce projet a permis de concevoir et d’analyser un système de commande industrielle intégrant un variateur de fréquence (VFD) et un automate programmable (PLC), visant à optimiser la performance, la sécurité et la flexibilité d’un entraînement électrique. Le système repose sur une architecture combinant des composants électromécaniques, tels que le moteur synchrone triphasé et les contacteurs KM1/KM2, avec une logique de contrôle centralisée par PLC. Ce dernier assure la gestion des entrées (boutons, relais thermique) et des sorties (alimentation moteur, inversion de sens, consigne de vitesse), tout en intégrant des protections contre les surcharges et les arrêts d’urgence.
+
+La simulation réalisée sous MATLAB/Simulink a joué un rôle central dans l’étude dynamique du système. En modélisant une chaîne d’alimentation comprenant une source haute tension (25 kV), un transformateur abaisseur (25 kV/460 V) et une machine asynchrone triphasée à cage, il a été possible d’évaluer l’impact du VFD sur la vitesse de rotation et le couple électromagnétique du moteur. Les résultats obtenus illustrent l’efficacité du VFD à ajuster dynamiquement la fréquence et la tension d’alimentation, permettant ainsi une adaptation précise aux besoins opérationnels, tels que le pompage continu d’eau ou la régulation de débit dans un scénario hydraulique simulé.
+
+Enfin, ce projet démontre les avantages d’une approche modernisée des systèmes industriels, où l’automatisation, la modularité et les protocoles de communication standardisés (Ethernet, RS485) renforcent à la fois la robustesse et la capacité de diagnostic en temps réel. Bien que nécessitant un investissement initial en expertise technique, cette solution offre un équilibre optimal entre innovation et fiabilité, ouvrant la voie à des applications étendues dans des domaines tels que les convoyeurs, les pompes ou le HVAC. Les travaux futurs pourraient approfondir l’intégration de stratégies de commande avancées ou l’optimisation énergétique, consolidant ainsi les bases posées par cette étude.
