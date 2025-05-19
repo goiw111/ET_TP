@@ -116,9 +116,10 @@ L’ensemble de cette simulation constitue une plateforme pédagogique efficace 
 )
 - * Tension de sortie de mochine asynchrone.*
 #figure(
-  image("../resources/img/scop2.PNG",width:110%),
+  image("../resources/img/tension machen.PNG",width:110%),
  
 )
+L'analyse de la tension de sortie et du couple de sortie d'une machine asynchrone révèle des comportements distincts mais complémentaires. La stabilité de la tension est indispensable pour un fonctionnement fiable, tandis que les variations du couple doivent être surveillées pour assurer une performance mécanique efficace. Ces résultats soulignent l'importance de ces deux paramètres dans l'évaluation des performances des machines asynchrones.
 - *Exemple de simulation d'une pompe hydraulique* \
   La simulation du système  pompe  hydraulique comprend plusieurs composants clés, notamment une pompe électrique (M1) qui aspire l'eau d'un réservoir et la pousse à travers le système, ainsi que des vannes pour contrôler le débit. Lors de la simulation, la pompe M1 s'active pour faire circuler l'eau, qui est dirigée à travers un tuyau vers une sortie. Les vannes peuvent être ouvertes ou fermées pour réguler le flux. Les paramètres à surveiller incluent le débit de la pompe, la pression dans le système pour garantir qu'elle reste dans des limites sûres, et le niveau d'eau dans le réservoir pour éviter les débordements ou les pompages à sec. Divers scénarios peuvent être explorés, tels que la variation de la vitesse de la pompe, les effets des vannes ouvertes ou fermées sur le débit, et l'impact d'un niveau d'eau faible ou d'une obstruation dans les tuyaux. L'objectif de cette simulation est de comprendre le comportement d'un système hydraulique simple, d'optimiser le fonctionnement de la pompe et de prévoir les problèmes potentiels. Cette approche permet aux utilisateurs d'expérimenter avec différents paramètres sans risque, tout en leur offrant une visualisation claire du fonctionnement du système.
 
