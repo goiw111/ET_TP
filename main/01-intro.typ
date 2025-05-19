@@ -4,7 +4,6 @@
 
 // https://www.designingbuildings.co.uk/wiki/Electrical_control_systems
 
-=  Introduction
 =  Vue d'ensemble des systèmes de contrôle électrique
 
 Un système de contrôle électrique est une interconnexion physique de dispositifs qui influencent le comportement d'autres dispositifs ou systèmes. Un système électronique simple se compose d'une entrée, d'un processus et d'une sortie. Les variables d'entrée et de sortie du système sont des signaux.

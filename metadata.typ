@@ -69,7 +69,7 @@
 //
 #let tableof = (
   toc: true,
-  tof: false,
+  tof: true,
   tot: false,
   tol: false,
   toe: false,
