@@ -24,21 +24,22 @@ Ce projet vise à concevoir et simuler un système d’entraînement électrique
   - *001 (-K1/-K2/-K3 = 1/0/0) :* Le niveau d'eau a dépassé le capteur de "niveau bas" (-K1) mais est toujours en dessous du capteur de "niveau moyen" (-K2).
   - *011 (-K1/-K2/-K3 = 1/1/0) :* Le niveau d'eau a dépassé à la fois le capteur de "niveau bas" (-K1) et le capteur de "niveau moyen" (-K2) mais est toujours en dessous du capteur de "niveau haut" (-K3).
   - *111 (-K1/-K2/-K3 = 1/1/1) :* Le niveau d'eau a atteint le capteur de "niveau haut" (-K3), indiquant que le réservoir est plein (ou à un niveau élevé).
+  \
 
   #figure(
     image("../resources/img/omar.svg",width: 90%),
   )
-
-L'API surveille en permanence les signaux d'entrée des capteurs de niveau, exécute la logique de commande programmée et génère des signaux de sortie pour contrôler le VFD et d'autres actionneurs. Cette stratégie de commande en boucle fermée garantit que le système de pompage d'eau fonctionne efficacement, réagit aux demandes changeantes et maintient les performances souhaitées.
+  \
+  L'API surveille en permanence les signaux d'entrée des capteurs de niveau, exécute la logique de commande programmée et génère des signaux de sortie pour contrôler le VFD et d'autres actionneurs. Cette stratégie de commande en boucle fermée garantit que le système de pompage d'eau fonctionne efficacement, réagit aux demandes changeantes et maintient les performances souhaitées.
 
 - *2. Circuit de Puissance*
-#figure(
+  #figure(
   image("../resources/img/circuit de puissance.svg",width:20%),
-)
-Le système de distribution de l'alimentation électrique fournit l'énergie nécessaire au fonctionnement du système de pompage d'eau. La source d'alimentation principale est un courant alternatif (CA) triphasé, comme indiqué par les bornes étiquetées L1, L2 et L3. Ces bornes représentent les conducteurs triphasés qui transportent l'énergie électrique vers le système. Un conducteur de terre de protection (PE) est également présent, servant de mise à la terre de sécurité pour protéger le personnel et l'équipement contre les défauts électriques.
+  )
+  Le système de distribution de l'alimentation électrique fournit l'énergie nécessaire au fonctionnement du système de pompage d'eau. La source d'alimentation principale est un courant alternatif (CA) triphasé, comme indiqué par les bornes étiquetées L1, L2 et L3. Ces bornes représentent les conducteurs triphasés qui transportent l'énergie électrique vers le système. Un conducteur de terre de protection (PE) est également présent, servant de mise à la terre de sécurité pour protéger le personnel et l'équipement contre les défauts électriques.
 
-L'alimentation triphasée est fournie au variateur de fréquence (VFD). 
-Le VFD est un dispositif électronique qui contrôle la fréquence et la tension fournies au moteur, régulant ainsi sa vitesse. Le VFD reçoit l'alimentation CA entrante via les bornes L1, L2, L3 et PE.
+  L'alimentation triphasée est fournie au variateur de fréquence (VFD). 
+  Le VFD est un dispositif électronique qui contrôle la fréquence et la tension fournies au moteur, régulant ainsi sa vitesse. Le VFD reçoit l'alimentation CA entrante via les bornes L1, L2, L3 et PE.
 
 - *4. Circuit de Commande*
 
@@ -95,11 +96,11 @@ Le circuit de commande constitue donc l'intelligence du système de pompage d'ea
 Le montage global du système peut être décomposé en plusieurs blocs fonctionnels, chacun jouant un rôle précis dans la chaîne d’alimentation et de commande :
 
 - *Source d’alimentation triphasée (25 kV, 60 Hz, 10 MVA)*
-Cette source représente une alimentation haute tension typique d’un réseau électrique. Elle fournit une tension sinusoïdale triphasée utilisée comme entrée pour le transformateur.
+  Cette source représente une alimentation haute tension typique d’un réseau électrique. Elle fournit une tension sinusoïdale triphasée utilisée comme entrée pour le transformateur.
 - *Transformateur abaisseur (25 kV / 460 V, 50 kVA)*
-Ce transformateur permet de réduire la tension de 25 kV à une tension plus adaptée (460 V) pour l’alimentation du VFD. Il utilise un couplage Δ , où le côté primaire est mis à la terre pour la sécurité, tandis que le côté secondaire en triangle assure un équilibrage efficace des charges.
+  Ce transformateur permet de réduire la tension de 25 kV à une tension plus adaptée (460 V) pour l’alimentation du VFD. Il utilise un couplage Δ , où le côté primaire est mis à la terre pour la sécurité, tandis que le côté secondaire en triangle assure un équilibrage efficace des charges.
 - *Variateur de fréquence (VFD)*
-Le VFD est le cœur du système de commande. Il reçoit une tension triphasée fixe (460 V) et une fréquence de commande (ici fixée à 50 Hz). En sortie, il génère une tension et une fréquence variables qui alimentent directement la machine asynchrone. Il permet ainsi de contrôler précisément la vitesse de rotation du moteur
+  Le VFD est le cœur du système de commande. Il reçoit une tension triphasée fixe (460 V) et une fréquence de commande (ici fixée à 50 Hz). En sortie, il génère une tension et une fréquence variables qui alimentent directement la machine asynchrone. Il permet ainsi de contrôler précisément la vitesse de rotation du moteur
 #figure(
   image("../resources/img/vfd1.png",width:90%),
  
@@ -110,20 +111,25 @@ La machine reçoit la tension triphasée variable du VFD. Elle convertit l’én
 L’ensemble de cette simulation constitue une plateforme pédagogique efficace pour comprendre le rôle fondamental des VFD dans la commande de moteurs asynchrones. Elle permet également d’explorer l’impact des paramètres électriques sur les performances mécaniques de la machine, tout en illustrant les principes d’interconnexion entre les différents composants d’un système industriel d’entraînement électrique.
 
 - * Tension de sortie de VFD.*
-#figure(
-  image("../resources/img/scop1.PNG",width:110%),
- 
-)
+  #figure(
+  image("../resources/img/scop1.PNG",width:100%),
+  )
+
+#pagebreak()
 - * Tension de sortie de mochine asynchrone.*
-#figure(
-  image("../resources/img/tension machen.PNG",width:110%),
- 
-)
-L'analyse de la tension de sortie et du couple de sortie d'une machine asynchrone révèle des comportements distincts mais complémentaires. La stabilité de la tension est indispensable pour un fonctionnement fiable, tandis que les variations du couple doivent être surveillées pour assurer une performance mécanique efficace. Ces résultats soulignent l'importance de ces deux paramètres dans l'évaluation des performances des machines asynchrones.
-- *Exemple de simulation d'une pompe hydraulique* \
+\
+
+  #figure(
+    image("../resources/img/tension machen.PNG",width:100%),
+    )
+  L'analyse de la tension de sortie et du couple de sortie d'une machine asynchrone révèle des comportements distincts mais complémentaires. La stabilité de la tension est indispensable pour un fonctionnement fiable, tandis que les variations du couple doivent être surveillées pour assurer une performance mécanique efficace. Ces résultats soulignent l'importance de ces deux paramètres dans l'évaluation des performances des machines asynchrones.
+\
+
+- *Exemple de simulation d'une pompe hydraulique* 
+  \
+  #figure(
+  image("../resources/img/pcsimu.PNG",width:60%),
+  )
+  \
   La simulation du système  pompe  hydraulique comprend plusieurs composants clés, notamment une pompe électrique (M1) qui aspire l'eau d'un réservoir et la pousse à travers le système, ainsi que des vannes pour contrôler le débit. Lors de la simulation, la pompe M1 s'active pour faire circuler l'eau, qui est dirigée à travers un tuyau vers une sortie. Les vannes peuvent être ouvertes ou fermées pour réguler le flux. Les paramètres à surveiller incluent le débit de la pompe, la pression dans le système pour garantir qu'elle reste dans des limites sûres, et le niveau d'eau dans le réservoir pour éviter les débordements ou les pompages à sec. Divers scénarios peuvent être explorés, tels que la variation de la vitesse de la pompe, les effets des vannes ouvertes ou fermées sur le débit, et l'impact d'un niveau d'eau faible ou d'une obstruation dans les tuyaux. L'objectif de cette simulation est de comprendre le comportement d'un système hydraulique simple, d'optimiser le fonctionnement de la pompe et de prévoir les problèmes potentiels. Cette approche permet aux utilisateurs d'expérimenter avec différents paramètres sans risque, tout en leur offrant une visualisation claire du fonctionnement du système.
 
-#figure(
-  image("../resources/img/pcsimu.PNG",width:60%),
- 
-)

@@ -2,8 +2,8 @@
 // Document options
 //
 #let option = (
-  //type : "final",
-  type : "draft",
+  type : "final",
+  //type : "draft",
   //lang : "en",
   //lang : "de",
   lang : "fr",
@@ -27,9 +27,9 @@
 // Metadata of the document
 //
 #let doc= (
-  title    : [*Report for Systems Engineering*],
+  title    : [*Rapport pour electrotichnique*],
   abbr     : "Prj",
-  subtitle : [_Typst Template Example_],
+  subtitle : [Techniques de contrôle électrique : Systèmes traditionnels à relais et systèmes PLC et VFD],
   //url      : "https://synd.hevs.io",
   logos: (
     //tp_topleft  : image("logo-TR-2-1.png", height: 1.2cm),
@@ -39,36 +39,24 @@
   ),
   authors: (
     (
-      name        : "Silvan Zahno",
-      abbr        : "ZaS",
-      email       : "silvan.zahno@hevs.ch",
-      url         : "https://synd.hevs.io",
+      name        : "Souhail Chahmout",
+      abbr        : "SCh",
+      email       : "chahmot.s@gmail.com",
     ),
     (
-      name        : "Axel Amand",
-      abbr        : "AmA",
+      name        : "Omar mansouri",
+      abbr        : "OmM",
       email       : "axel.amand@hevs.ch",
-      url         : "https://synd.hevs.io",
-    ),
-    (
-      name        : "Rémi Heredero",
-      abbr        : "HeR",
-      email       : "remi.heredero@hevs.ch",
-      url         : "https://synd.hevs.io",
     ),
   ),
   school: (
-    name        : "HES-SO Valais//Wallis",
-    major       : "Systems Engineering",
-    orientation : "Infotronics",
-    url         : "https://synd.hevs.io",
+    name        : "FP Larache",
+    major       : "Master GESE",
   ),
   course: (
-    name     : "Digital Design",
-    url      : "https://course.hevs.io/did/eda-docs/",
-    prof     : "Silvan Zahno",
-    class    : [S1f$alpha$],
-    semester : "Fall Semester 2025",
+    name     : "electrotichnique",
+    prof     : "PR. MRABTI TARIK",
+    semester : "Semester 2024 2025",
   ),
   keywords : ("Typst", "Template", "Report", "HEI-Vs", "Systems Engineering", "Infotronics"),
   version  : "v0.1.0",
