@@ -8,26 +8,26 @@ Une forme de commande discrète enseignée dans tous les cours d'introduction à
 
 #figure(
   image("/resources/img/gate_01.png",width: 90%),
-  caption: ""
+  
 )
 Les systèmes de contrôle industriels utilisent rarement des portes logiques de manière directe pour les systèmes de contrôle discrets, bien que les concepts fondamentaux de « ET », « OU » et d'autres types de portes soient universellement appliqués. Les fonctions de commande sont plutôt mises en œuvre à l'aide de relais électromécaniques et/ou de dispositifs numériques programmables tels que les automates programmables industriels (API). Ce chapitre se concentre sur l'utilisation pratique de ces deux technologies pour la commande discrète industrielle.
 
 Une fonction « ET » est équivalente à des contacts normalement ouverts connectés en série dans un circuit de commande à relais, car la lampe ne sera alimentée que si l'interrupteur A et l'interrupteur B sont actionnés :
 #figure(
   image("/resources/img/gate_02.jpg",width: 90%),
-  caption: ""
+ 
 )
 Une fonction « OU » est équivalente à des contacts normalement ouverts connectés en parallèle dans un circuit de commande de relais, car la lampe sera alimentée si l'interrupteur A ou l'interrupteur B est actionné :
 #figure(
   image("/resources/img/gate_03.jpg",width: 90%),
-  caption: ""
+
 )
 
 La fonction « NOT » est équivalente à un simple contact normalement fermé dans un circuit de commande de relais, car la lampe n'est alimentée que si l'interrupteur n'est pas actionné :
 
 #figure(
   image("/resources/img/gate_04.jpg",width: 90%),
-  caption: ""
+ 
 )
 
 == Les bases des relais de contrôle
@@ -43,21 +43,21 @@ Le symbole du schéma électronique d'un relais unipolaire simple (SPST) est ill
 
 #figure(
   image("/resources/img/image1_28_1.jpg",width: 60%),
-  caption: ""
+  
 )
 
 Une bobine de fil enroulée autour d'un noyau ferreux laminé fournit le champ magnétique nécessaire pour actionner le mécanisme de commutation, alimenté par une tension alternative ou continue, selon le modèle. L'influence de cette bobine d'électroaimant sur le(s) contact(s) du relais est représentée par la ligne en pointillés. Ce relais particulier est équipé de contacts de commutation normalement ouverts (NO), ce qui signifie que le commutateur sera à l'état ouvert (off) lorsque la bobine du relais est désexcitée. Rappelons que l'état « normal » d'un interrupteur est l'état de repos sans stimulation. Le contact d'un interrupteur à relais est dans son état « normal » lorsque sa bobine n'est pas alimentée. Un relais unipolaire, unidirectionnel avec un contact de commutation normalement fermé (NC) serait représenté dans un schéma électronique comme suit :
 
 #figure(
   image("/resources/img/image2_28_1.jpg",width: 60%),
-  caption: ""
+ 
 )
 
 Dans le monde du contrôle électrique, les étiquettes « Form-A » et « Form-B » sont synonymes de contacts « normalement ouverts » et « normalement fermés », respectivement. Ainsi, nous aurions pu étiqueter les contacts des relais SPST comme « Forme-A » et « Forme-B », respectivement :
 
 #figure(
   image("/resources/img/image3_28_1.jpg",width: 60%),
-  caption: ""
+ 
 )
 
 - *Relais unipolaire et bipolaire (relais SPDT)*
@@ -65,14 +65,14 @@ Une extension de ce thème est le contact de relais unipolaire et bipolaire (SPD
 
 #figure(
   image("/resources/img/image4_28_1.jpg",width: 60%),
-  caption: ""
+
 )
 - *Relais bipolaire à double contact (relais DPDT)*
 Une autre extension de ce thème est le contact de relais double pôle, double lance (DPDT). Ce type d'interrupteur fournit deux jeux de contacts de forme C en une seule unité, actionnés simultanément par la bobine de l'électro-aimant :
 
 #figure(
   image("/resources/img/image5_28_1.jpg",width: 60%),
-  caption: ""
+ 
 )
 
 Les relais DPDT sont parmi les types de relais les plus courants dans l'industrie en raison de leur polyvalence. Chaque jeu de contacts de « forme C » offre un choix de contacts normalement ouverts ou normalement fermés, et les deux jeux (deux « pôles ») sont électriquement isolés l'un de l'autre de sorte qu'ils peuvent être utilisés dans des circuits différents.
@@ -81,7 +81,7 @@ Deux boîtiers courants pour les relais industriels sont le relais octal et le r
 
 #figure(
   image("/resources/img/ac-28-30-12-2.jpg",width: 60%),
-  caption: ""
+
 )
 
 Ces relais se connectent à l'embase avec huit broches : trois pour chacun des deux jeux de contacts de forme C, plus deux autres broches pour les connexions de la bobine. En raison du nombre de broches (8), ce type d'embase de relais est généralement réservé aux connexions de type DPDT.
@@ -90,13 +90,13 @@ Une vue rapprochée d'un contact de forme C montre comment la « feuille » mét
 
 #figure(
   image("/resources/img/image8_28_1.jpg",width: 38%),
-  caption: ""
+ 
 )
 The *“ice cube”* relay is functionally identical, but the pins are arranged in a rectangular pattern, rather than circular around the base. These relays can be found in single and double-pole varieties, and even up to 4 contact sets (4PDT) is fairly common. The below images show a standard From-C DPDT ice cube relay followed by a 4PDT with the matching socket.
 
 #figure(
   image("/resources/img/Pole_1.jpg",width: 60%),
-  caption: ""
+ 
 )
 
 *Schéma de connexion*
@@ -104,7 +104,7 @@ Les relais de commande industriels ont généralement des schémas de connexion 
 
 #figure(
   image("/resources/img/image12_28_1.jpg",width: 50%),
-  caption: ""
+  
 )
 
 === Circuits de relais et Ladder Diagrams
@@ -132,7 +132,7 @@ Dans un système logique à relais typique, les dispositifs d'entrée et de sort
 Les relais et les contacteurs sont des composants fondamentaux dans l'automatisation industrielle, largement utilisés pour contrôler des circuits haute tension avec des signaux basse tension. Bien qu'ils fonctionnent sur des principes similaires d'induction électromagnétique, ils ne sont pas interchangeables en raison de leurs différences en termes de conception, d'application et de fonction. Examinons de plus près leurs principes de fonctionnement, leurs différences et les rôles spécifiques des relais et des contacteurs dans les circuits industriels.
 #figure(
   image("/resources/img/Con_Relay.jpg",width: 80%),
-  caption: ""
+  
 )
 
 // https://control.com/technical-articles/contactors-versus-relays-differences-and-applications/
@@ -147,7 +147,7 @@ Le fonctionnement est similaire : lorsqu'un petit courant passe à travers la bo
 Bien qu'ils partagent un principe de fonctionnement similaire, les *relais* et les *contacteurs* sont conçus pour des objectifs et des environnements différents.
 #figure(
   image("/resources/img/Con_Relay_3.jpg",width: 60%),
-  caption: ""
+  
 )
 
 1. *Taille et capacité de courant :*
@@ -186,7 +186,7 @@ Bien qu'ils partagent un principe de fonctionnement similaire, les *relais* et l
 
 #figure(
   image("/resources/img/Relay-Con_Schematic2.jpg",width: 90%),
-  caption: ""
+  
 )
 
 Bien que les relais et les contacteurs soient des dispositifs électromécaniques utilisés pour contrôler le flux d'électricité dans les circuits, ils remplissent des fonctions différentes dans l'automatisation industrielle. Les relais conviennent aux applications de faible puissance et de commande, tandis que les contacteurs sont conçus pour gérer des opérations de commutation haute puissance et des charges lourdes. Comprendre les différences entre eux est essentiel pour les ingénieurs en automatisation afin de sélectionner le bon composant pour chaque application spécifique. Bien que relais et contacteurs fonctionnent sur des principes électromagnétiques similaires, leurs différences de taille, de configuration de contacts et de durabilité font qu'ils ne peuvent pas être utilisés de manière interchangeable dans tous les scénarios.
