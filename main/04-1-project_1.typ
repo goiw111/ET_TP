@@ -6,6 +6,7 @@ Dans cette section, nous présentons la modélisation et la simulation d’un sy
 
   #figure(
     image("../resources/img/c_psn.svg")
+    caption: 
   )
 
   Le circuit de puissance est responsable de la transmission de l'énergie électrique au moteur. Il comprend :
