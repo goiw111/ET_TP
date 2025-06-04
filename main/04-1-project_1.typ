@@ -1,7 +1,6 @@
-== Projet 1 : Commande en boucle fermée d’un système de pompage d’eau avec un PLC
+== Projet 1 : Modélisation et simulation d’un système de pompage d’eau à l’aide d’un moteur asynchrone en commande en boucle ouverte
 
-Cette section pose les bases de la compréhension du contrôle en boucle fermée d'un système de pompage d'eau mis en œuvre avec un automate programmable (PLC). Elle détaille les composants matériels essentiels, notamment la distribution électrique, le moteur et son entraînement à fréquence variable (VFD), ainsi que l'automate "SIEMENS LOGO !"  qui sert de cœur de commande. 
-En outre, cette section examine méticuleusement les configurations d'entrée et de sortie de l'automate, ainsi que les circuits de relais. Surtout, il déchiffre le diagramme logique intégré, fournissant une compréhension fondamentale de la stratégie de contrôle régissant le système de pompage automatisé.
+Dans cette section, nous présentons la modélisation et la simulation d’un système de pompage d’eau entraîné par un moteur asynchrone. Le moteur est commandé en boucle ouverte, c’est-à-dire que le système ne dispose pas de retour d’information pour ajuster la vitesse ou le couple du moteur. Ce type de commande est simple et convient aux applications où une grande précision n’est pas nécessaire. Les circuits de commande et de puissance sont modélisés à l’aide d’outils de simulation tels que Simulink et PC_Simu, ce qui permet d’observer et d’analyser le comportement du système dans différentes conditions de fonctionnement. L’objectif est de valider le fonctionnement de base du système de pompage et de comprendre la dynamique du moteur asynchrone en mode de commande ouverte.
 
 - *1.1 Circuit de Puissance*
 
