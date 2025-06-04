@@ -22,6 +22,7 @@
 #include "/main/02-systeme_classique.typ"
 #include "/main/03-plc.typ"
 #include "/main/04-implementation.typ"
+#include "/main/06-conclusion.typ"
 
 #heading(numbering:none, outlined: false)[] <sec:end>
 
