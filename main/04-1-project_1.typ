@@ -5,8 +5,8 @@ Dans cette section, nous présentons la modélisation et la simulation d’un sy
 - *1.1 Circuit de Puissance*
 
   #figure(
-    image("../resources/img/c_psn.svg")
-    caption: 
+    image("../resources/img/c_psn.svg"),
+    caption: "Circuit de Puissance"
   )
 
   Le circuit de puissance est responsable de la transmission de l'énergie électrique au moteur. Il comprend :
@@ -30,7 +30,8 @@ Dans cette section, nous présentons la modélisation et la simulation d’un sy
   Le circuit de commande est responsable de contrôler la mise en marche et l'arrêt du moteur en agissant sur la bobine du contacteur. Il comprend :
 
   #figure(
-    image("../resources/img/c_cmd.svg")
+    image("../resources/img/c_cmd.svg"),
+    caption: "Circuit de Commande"
   )
 
   - *Bouton poussoir Start (NO - Normalement Ouvert)* :
@@ -87,7 +88,8 @@ Pour analyser et valider le fonctionnement du système, plusieurs outils ont ét
 - *4.2 PC_Simu*
 
   #figure(
-    image("../resources/img/pc1.PNG",width: 80%)
+    image("../resources/img/pc1.PNG",width: 80%),
+    caption: "interface homme-machine (IHM) avec PC_Simu"
   )
 
   - Fournit une interface homme-machine (IHM) avec des boutons virtuels pour tester le système.
@@ -102,7 +104,8 @@ Pour analyser et valider le fonctionnement du système, plusieurs outils ont ét
   Voici un schéma synthétique résumant les deux circuits principaux :
 
   #figure(
-    image("../resources/img/c_final.svg")
+    image("../resources/img/c_final.svg"),
+    caption: "Schéma Synthétique"
   )
 
   - Le *relais thermique* protège le moteur en cas de surcharge.
@@ -168,7 +171,8 @@ La *transformation de Clarke-Park* est cruciale car elle facilite la décomposit
   La décomposition selon les axes d-q  est une technique utilisée pour transformer les variables triphasées (tensions, courants et flux) d'une machine à courant alternatif en un système orthogonal biphasé tournant à la vitesse synchrone. Cette transformation simplifie l'analyse et le contrôle de la machine.
 
 #figure(
-  image("../resources/img/sch_eq_pc_trf.svg")
+  image("../resources/img/sch_eq_pc_trf.svg"),
+  caption: "Circuit Équivalent du Axe d-q"
 )
 
 - * 2.1 Circuit Équivalent du Axe d *
@@ -260,6 +264,7 @@ où :
 
 #figure(
   image("../resources/img/matlab_sys.png"),
+  caption: "La simulation de la machine à induction dans Simulink"
 )
 
 - *1. Structure Générale du Modèle*
@@ -292,19 +297,22 @@ Le modèle Simulink est divisé en plusieurs sections principales :
 
 #figure(
   image("../resources/img/abc_dq0.png"),
+  caption: "bloc convertit les tensions triphasées V_abc et la vitesse synchrone omega en référentiel d-q (dq0)"
 )
 
 - *abc → dq0* : Ce bloc convertit les tensions triphasées ($V_"s abc"$) et la vitesse synchrone ($omega_t$) en référentiel d-q (dq0). Cette transformation est essentielle pour simplifier l'analyse dynamique de la machine.
 
 - *2.2 Calcul des Flux Statoriques*
 #figure(
-  image("../resources/img/Stator_Flux.png")
+  image("../resources/img/Stator_Flux.png"),
+  caption: "bloc calcule les flux statoriques"
 )
 - *Stator Flux* : Ce bloc calcule les flux statoriques ($Phi_"s dq"$) à partir des courants statoriques ($i_"s dq"$) et des paramètres de la machine (inductances mutuelles $L_m$ et réactance de fuite statorique $L_"ls"$).
 
 - *2.3 Calcul des Flux Rotoriques*
 #figure(
-  image("../resources/img/Rotor_Flux.png")
+  image("../resources/img/Rotor_Flux.png"),
+  caption: "bloc calcule les flux rotoriques"
 )
 - *Rotor Flux* : Ce bloc calcule les flux rotoriques ($Phi_"r dq"$) à partir des courants rotoriques ($i_"r dq"$) et des paramètres de la machine (inductances mutuelles $L_m$ et réactance de fuite rotorique $L_lr$).
 
@@ -313,7 +321,8 @@ Le modèle Simulink est divisé en plusieurs sections principales :
   $ i_"s  dq" = frac(Phi_"s dq" - L_m i_"r dq",L_m + L_"ls") $
 
   #figure(
-    image("../resources/img/is_d.png")
+    image("../resources/img/is_d.png"),
+    caption: "bloc convertit les flux statoriques et rotoriques en courants statoriques et rotoriques"
   )
 
 
@@ -328,7 +337,8 @@ Le modèle Simulink est divisé en plusieurs sections principales :
   $ T_e = frac(3P,2) (i_"qs" (i_"ds" + i_"dr") L_m + i_"ds" (i_"qs" + i_"qr") L_m) $
 
   #figure(
-    image("../resources/img/EM_Torque.png")
+    image("../resources/img/EM_Torque.png"),
+    caption: "bloc calcule le couple électromagnétique"
   )
 
 - *2.6 Système Mécanique*
